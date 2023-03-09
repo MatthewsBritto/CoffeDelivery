@@ -62,7 +62,7 @@ export const ItemsContainer = styled.ul `
       display: flex;
       gap: 1rem; 
       align-items:center;
-      
+      font-family:'Roboto';
    }
 
 `

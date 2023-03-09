@@ -17,19 +17,19 @@ export function Hero() {
          </h4>
          <ItemsContainer>
             <li>
-               <Icon color={'blue'}><ShoppingCart  weight='fill'/></Icon>
+               <Icon color={'#c47f17'}><ShoppingCart  weight='fill'/></Icon>
                <p>Compra simples e segura</p>
             </li>
             <li>
-               <Icon color={'blue'}><Package weight='fill'/></Icon>
+               <Icon color={'#574f4d'}><Package weight='fill'/></Icon>
                <p>Compra simples e segura</p>
             </li>
             <li>
-               <Icon color={'blue'}><Timer weight='fill'/></Icon>
+               <Icon color={'#DBAC2C'}><Timer weight='fill'/></Icon>
                <p>Compra simples e segura</p>
             </li>
             <li>
-               <Icon color={'blue'}><Coffee weight='fill'/></Icon>
+               <Icon color={'#8047f8'}><Coffee weight='fill'/></Icon>
                <p>Compra simples e segura</p>
             </li> 
          </ItemsContainer>

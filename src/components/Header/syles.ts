@@ -18,7 +18,9 @@ top: 1.75rem; */
 
 background: #FAFAFA;
    
-   
+   img{
+      cursor: pointer;
+   }
 
 `
 
@@ -29,7 +31,7 @@ export const Actions = styled.div`
    align-items: center;
    padding: 0px;
    gap: .75rem;
-
+   margin-right: 7rem;
    width: 12rem;
    height: 2.37rem;
 
@@ -79,6 +81,7 @@ export const Actions = styled.div`
       background: ${props=> props.theme[ 'yellowlight']};
       color: ${props => props.theme['darkyellow']};
       border-radius: 6px;
+      cursor: pointer;
 
       /* Inside auto layout */
 
