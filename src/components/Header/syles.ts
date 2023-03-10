@@ -6,15 +6,8 @@ flex-direction: row;
 justify-content: space-between;
 align-items: center;
 padding: 2rem 10rem;
-
-
-/* position: absolute; */
 height: 6.5rem;
-/* left: .43rem;
-right: .43rem;
-top: 1.75rem; */
 
-/* Base/Background */
 
 background: #FAFAFA;
    
@@ -49,7 +42,7 @@ export const Actions = styled.div`
       align-items: center;
       padding: .5rem;
       gap: .25rem;
-
+      font-family: 'Roboto', sans-serif;
       width: 8.93rem;
       height: 2.37rem;
 

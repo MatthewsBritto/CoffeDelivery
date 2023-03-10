@@ -128,7 +128,7 @@ export const BuyBtn = styled.a`
    justify-content:center;
 
 
-   `
+`
 
 export const LabelContainer = styled.div`
 
