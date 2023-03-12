@@ -53,7 +53,19 @@ export function List(){
       if(item) {
          item.qtd = item.qtd + 1
       }      
-      setListCoffe([item])
+      let newlist = listCoffe
+      newlist[id] = item 
+      setListCoffe([...newlist])
+   } 
+   function removeCoffe(id:number){
+      let item = listCoffe[id]
+
+      if(item.qtd > 0 ) {
+         item.qtd = item.qtd - 1
+      }      
+      let newlist = listCoffe
+      newlist[id] = item 
+      setListCoffe([...newlist])
    }
    
    
@@ -90,7 +102,7 @@ export function List(){
                <PriceContainer>
                   <h3>R$<span>{item.price}</span></h3>
                   <Counter>
-                     <button><Minus weight='bold'/></button>
+                     <button onClick={ () => removeCoffe(item.id)}><Minus weight='bold'/></button>
                         <p>{item.qtd}</p>
                      <button onClick={ () => addCoffe(item.id)}><Plus weight='bold'/></button>
 
