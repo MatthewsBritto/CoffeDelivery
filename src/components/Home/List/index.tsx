@@ -14,16 +14,47 @@ interface ListCoffeProps {
    Photo:string;
    sub:string[];
    description:string;
+   qtd:number;
+
+}
+
+interface Order {
+
+   id:number;
+   description:string;
+   quantidade:number;
+   price:number;
 
 }
 
 
 export function List(){
 
+   const [orders,SetOrders] = useState<Order[]>([])
+
    const [listCoffe, setListCoffe] = useState<ListCoffeProps[]>(()=> {
       return [...ListCoffe.types]
    });
 
+   // function handleNewOrder(data:Order){
+   //    const newOrder: Order = {
+   //       id:data.id,
+   //       description:data.description,
+   //       quantidade: data.quantidade,
+   //       price:data.price
+   //    }
+
+   //    SetOrders((state) => [...state,newOrder])
+
+   // }
+   function addCoffe(id:number){
+      let item = listCoffe[id]
+
+      if(item) {
+         item.qtd = item.qtd + 1
+      }      
+      setListCoffe([item])
+   }
    
    
   return (
@@ -35,7 +66,8 @@ export function List(){
 
       {listCoffe && listCoffe.map((item) => {
          return(
-            <CoffeCard>
+
+            <CoffeCard key={item.id}>
 
                <ImgContainer>
                      <img src={item.Photo} />
@@ -59,8 +91,8 @@ export function List(){
                   <h3>R$<span>{item.price}</span></h3>
                   <Counter>
                      <button><Minus weight='bold'/></button>
-                        <p>{1}</p>
-                     <button><Plus weight='bold'/></button>
+                        <p>{item.qtd}</p>
+                     <button onClick={ () => addCoffe(item.id)}><Plus weight='bold'/></button>
 
                      <BuyBtn>
                         <ShoppingCart weight='fill'/>
