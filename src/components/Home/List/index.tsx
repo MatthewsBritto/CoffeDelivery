@@ -1,73 +1,25 @@
-import React, { useState } from 'react';
-import ListCoffe from '../../../json/coffesTypes.json'
+import React, { useContext, useEffect, useState } from 'react';
 import { Plus, Minus, ShoppingCart, } from 'phosphor-react';
-
+import { Order } from '../../../App'
 import { Container,TextContainer,ImgContainer
    ,PriceContainer,CoffeCard,Counter,BuyBtn,
    LabelContainer, InputContainer } from './styles';
 
+import {OrderContext} from '../../../App'
 
-interface ListCoffeProps {
-   id:number;
-   type: string;
-   price: string;
-   Photo:string;
-   sub:string[];
-   description:string;
-   qtd:number;
 
-}
-
-interface Order {
-
-   id:number;
-   description:string;
-   quantidade:number;
-   price:number;
-
-}
 
 
 export function List(){
-
-   const [orders,SetOrders] = useState<Order[]>([])
-
-   const [listCoffe, setListCoffe] = useState<ListCoffeProps[]>(()=> {
-      return [...ListCoffe.types]
-   });
-
-   // function handleNewOrder(data:Order){
-   //    const newOrder: Order = {
-   //       id:data.id,
-   //       description:data.description,
-   //       quantidade: data.quantidade,
-   //       price:data.price
-   //    }
-
-   //    SetOrders((state) => [...state,newOrder])
-
-   // }
-   function addCoffe(id:number){
-      let item = listCoffe[id]
-
-      if(item) {
-         item.qtd = item.qtd + 1
-      }      
-      let newlist = listCoffe
-      newlist[id] = item 
-      setListCoffe([...newlist])
-   } 
-   function removeCoffe(id:number){
-      let item = listCoffe[id]
-
-      if(item.qtd > 0 ) {
-         item.qtd = item.qtd - 1
-      }      
-      let newlist = listCoffe
-      newlist[id] = item 
-      setListCoffe([...newlist])
-   }
    
+   const {addqtd,removeqtd,listCoffe,handleNewOrder,orders} = useContext(OrderContext)
+
+   useEffect(() =>{
+      console.log(orders)
+   },[orders])
+
+   
+
    
   return (
    <Container>
@@ -102,11 +54,11 @@ export function List(){
                <PriceContainer>
                   <h3>R$<span>{item.price}</span></h3>
                   <Counter>
-                     <button onClick={ () => removeCoffe(item.id)}><Minus weight='bold'/></button>
+                     <button onClick={ () => removeqtd(item.id)}><Minus weight='bold'/></button>
                         <p>{item.qtd}</p>
-                     <button onClick={ () => addCoffe(item.id)}><Plus weight='bold'/></button>
+                     <button onClick={ () => addqtd(item.id)}><Plus weight='bold'/></button>
 
-                     <BuyBtn>
+                     <BuyBtn onClick={()=> {handleNewOrder(item)}}>
                         <ShoppingCart weight='fill'/>
                      </BuyBtn>
                   </Counter>

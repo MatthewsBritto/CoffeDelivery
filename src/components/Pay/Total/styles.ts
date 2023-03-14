@@ -45,5 +45,7 @@ export const FinishedBtn = styled.button`
    font-family: 'Roboto';
    font-weight:bold;
    letter-spacing: 1.5px;
+   cursor: pointer;
 `
+
 

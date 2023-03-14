@@ -5,7 +5,7 @@
             {
                "id":0,
                "type":"Expresso Americano",
-               "price": "9,90",
+               "price": "9,95",
                "Photo":"../../../../src/assets/Type=Americano.png",
                "sub":["Tradicional"],
                "description":"Expresso diluído, menos intenso que o tradicional",

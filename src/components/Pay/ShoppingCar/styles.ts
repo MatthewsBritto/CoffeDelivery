@@ -72,6 +72,7 @@ export const Item = styled.div`
    display: flex;
    justify-content:space-between;
    align-items:center;
+   margin:1.5rem 0;
 
    img{
       width:4rem;

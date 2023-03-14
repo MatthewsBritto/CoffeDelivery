@@ -17,7 +17,7 @@ background: #FAFAFA;
 
 `
 
-export const Actions = styled.div`
+export const Actions = styled.nav`
    display: flex;
    flex-direction: row;
    justify-content: flex-end;
@@ -58,7 +58,7 @@ export const Actions = styled.div`
       order: 0;
       flex-grow: 0;
    }
-   button{
+   a{
       display: flex;
       flex-direction: row;
       justify-content: center;
