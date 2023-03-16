@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Plus, Minus, ShoppingCart, } from 'phosphor-react';
-import { Order } from '../../../App'
+import { Order } from '../../../contexts/OrderContext'
 import { Container,TextContainer,ImgContainer
    ,PriceContainer,CoffeCard,Counter,BuyBtn,
    LabelContainer, InputContainer } from './styles';
 
-import {OrderContext} from '../../../App'
+import {OrderContext} from '../../../contexts/OrderContext'
 
 
 

@@ -1,25 +1,53 @@
-import React from 'react';
+import React, { ReactNode, useContext,useState,useEffect } from 'react';
 
 import { Container,Item,TotalPrice,FinishedBtn } from './styles';
+import { OrderContext } from '../../../contexts/OrderContext';
 
-export function Total(){
-  return (
+interface TotalProps {
+   children:ReactNode
+}
+
+
+export function Total() {
+
+   const {total} = useContext(OrderContext)
+
+   const [allTotal,setAllTotal] = useState(0)
+
+   const [entrega,setEntrega] = useState(3.50)
+
+   useEffect(() => {
+      updateTotal()
+   },[total])
+
+   function updateTotal(){
+      let x : number = total 
+      let y = entrega
+
+      if(x & y){
+
+         setAllTotal(x + y)
+      }     
+
+   }
+
+   return (
       <Container>
          <Item>
             <p>Total de itens</p>
-            <p>R$  29,70</p>
+            <p>R$  {total}</p>
          </Item>
          <Item>
             <p>Entrega</p>
-            <p>R$  3,50</p>
+            <p>R$ <>{entrega}</> </p>
          </Item>
 
          <TotalPrice>
             <h3>Total</h3>
-            <p>R$  33,20</p> 
+            <p>R$ <>{allTotal}</> </p> 
          </TotalPrice>
 
-         <FinishedBtn>Confirmar Pedido</FinishedBtn>
+         <FinishedBtn type="submit">Confirmar Pedido</FinishedBtn>
       </Container>
   )
 }

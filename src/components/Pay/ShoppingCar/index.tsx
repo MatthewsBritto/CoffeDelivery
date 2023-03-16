@@ -3,7 +3,7 @@ import Img from '../../../assets/Type=Expresso.png'
 import { ShoppingCart,Minus,Plus,Trash } from 'phosphor-react';
 import { Total } from '../Total';
 
-import { ListCoffeProps, OrderContext } from '../../../App';
+import { ListCoffeProps, OrderContext } from '../../../contexts/OrderContext';
 import { CarContainer,Counter,BuyBtn
   ,CarItemsContainer,Item,TextContainer,ItemTotal,
   RemoveBtn, BtnContainer } from './styles';
@@ -23,7 +23,7 @@ export function ShoppingCar(){
           {orders && orders.map((item) => {
             return (
               <Item key={item.id}>
-                <img src={item.Photo} />
+                <img src={item.Photo}/>
   
                 <TextContainer>
   
@@ -43,7 +43,7 @@ export function ShoppingCar(){
                   </BtnContainer>
                 </TextContainer>
   
-                <ItemTotal>R$ 9,90</ItemTotal>
+                <ItemTotal>R$ {item.price}</ItemTotal>
               </Item>   
             )
           })}

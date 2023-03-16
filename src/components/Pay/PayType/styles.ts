@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+type TesteProps = {
+   isSelected: boolean
+}
 
 export const Container = styled.div`
    margin-top:1rem;
@@ -28,12 +32,13 @@ export const TypesContainer = styled.ul`
 
    padding: 1rem;
    display: flex;
-   /* justify-content:space-evenly; */
    align-items:center;
    gap: 1.3rem;
    width: 95%;
 
-   li{
+`
+
+export const ItemPay = styled.div<TesteProps>`
       height: 3rem;
       width:30%;
       font-family: 'Roboto', sans-serif;
@@ -49,13 +54,21 @@ export const TypesContainer = styled.ul`
       background-color:${props => props.theme.baseInput};
       color: ${props => props.theme.baseText};
       cursor: pointer;
+      border: 2px solid  'transparent';
+      
+      
+      ${props => props.isSelected  && css`
+
+         border: 2px solid  ${props.theme.purple} ;
+      
+      `
+      }
       
       h3{
          padding-top:.1rem;
       }
-   }
 
-   li:hover{
-      border:2px solid ${props => props.theme.purple};
-   }
+      &:hover{
+         border:2px solid ${props => props.theme.purple};
+      }
 `
