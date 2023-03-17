@@ -5,13 +5,16 @@ type TesteProps = {
 }
 
 export const Container = styled.div`
-   margin-top:1rem;
+   
    width: 100%;
+   padding: 0.8rem;
+   background-color: ${props => props.theme.baseCard};
+   border-radius:12px;
 `
 
 export const TextContainer = styled.div`
    display:flex;
-   padding: 0.5rem 1rem;
+   padding: 0.5rem 0;
    div {
       font-family: 'Roboto', sans-serif;
       margin-left: .5rem;
@@ -30,7 +33,6 @@ export const TextContainer = styled.div`
 
 export const TypesContainer = styled.ul`
 
-   padding: 1rem;
    display: flex;
    align-items:center;
    gap: 1.3rem;
@@ -38,7 +40,7 @@ export const TypesContainer = styled.ul`
 
 `
 
-export const ItemPay = styled.div<TesteProps>`
+export const ItemPay = styled.a<TesteProps>`
       height: 3rem;
       width:30%;
       font-family: 'Roboto', sans-serif;
@@ -54,7 +56,7 @@ export const ItemPay = styled.div<TesteProps>`
       background-color:${props => props.theme.baseInput};
       color: ${props => props.theme.baseText};
       cursor: pointer;
-      border: 2px solid  'transparent';
+      border: none;
       
       
       ${props => props.isSelected  && css`

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { CurrencyDollar,CreditCard,Money,Bank } from 'phosphor-react';
 import { Container,TextContainer,TypesContainer,ItemPay } from './styles';
 import Pays from '../../../json/payForms.json'
+import { Icon } from './components';
 
 interface PaysProps {
    id:number,
    description:string;
    active:boolean;
+   type:string;
 }
 
 export function PayType() {
@@ -18,8 +20,8 @@ export function PayType() {
       return [...Pays]
    })
 
-   function setActiveFalse(id:number){
-      console.log(id)
+   function setActiveFalse(id:number) {
+
       let newlist:PaysProps[] = []
       let itemIndex = paysForm.findIndex(item => item.id === id)
       
@@ -30,20 +32,21 @@ export function PayType() {
             ...item,
             active:item.id ===id
          }
-/*          if(itemIndex === item.id){
-            return{
-               ...item,
-               active:true
-   
-            }
-         } else {
-            return{
-               ...item,
-               active:false
-   
-            }
 
-         } */
+   /*          if(itemIndex === item.id){
+               return{
+                  ...item,
+                  active:true
+      
+               }
+            } else {
+               return{
+                  ...item,
+                  active:false
+      
+               }
+
+            } */
 
 
       })
@@ -53,7 +56,6 @@ export function PayType() {
 
    }
    
-   console.log(paysForm)
    
   return (
    <Container>
@@ -69,30 +71,12 @@ export function PayType() {
 
          {paysForm && paysForm.map((item) => {
             
-            if(item.id === 10){
                return (
-                  <ItemPay key={item.id} onClick={ () => setActiveFalse(item.id) } isSelected={item.active}>
-                     <CreditCard weight='regular'size={18} color={'#8047f8'}/>
+                  <ItemPay  key={item.id} onClick={ () => {setActiveFalse(item.id)} } isSelected={item.active}>
+                     <Icon typeBatata={item.type} />
                      <h3>{item.description}</h3>
                   </ItemPay>
                 )
-            }
-            if(item.id === 20){
-               return (
-                  <ItemPay key={item.id} onClick={()=> setActiveFalse(item.id)} isSelected={item.active}>
-                     <Bank weight='regular'size={18} color={'#8047f8'}/>
-                     <h3>{item.description}</h3>
-                  </ItemPay>
-                )
-            }
-            if(item.id === 30){
-               return (
-                  <ItemPay key={item.id} onClick={()=> setActiveFalse(item.id)} isSelected={item.active} >
-                     <Money weight='regular'size={18} color={'#8047f8'}/>
-                     <h3>{item.description}</h3>
-                  </ItemPay>
-                )
-            }
          })}
       </TypesContainer>
    </Container>

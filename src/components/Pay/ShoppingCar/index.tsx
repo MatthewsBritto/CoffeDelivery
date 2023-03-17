@@ -1,14 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Img from '../../../assets/Type=Expresso.png'
-import { ShoppingCart,Minus,Plus,Trash } from 'phosphor-react';
+import {Minus,Plus,Trash } from 'phosphor-react';
 import { Total } from '../Total';
-
 import { ListCoffeProps, OrderContext } from '../../../contexts/OrderContext';
 import { CarContainer,Counter,BuyBtn
   ,CarItemsContainer,Item,TextContainer,ItemTotal,
   RemoveBtn, BtnContainer } from './styles';
 
-export function ShoppingCar(){
+//  export interface submitProps {
+//     submitingForm : React.Dispatch<React.SetStateAction<boolean>> 
+    
+//  }
+
+export function ShoppingCar() {
 
   const {addqtdItn,removeqtdItn,removeItn,orders} = useContext(OrderContext) 
 
@@ -31,9 +34,9 @@ export function ShoppingCar(){
     
                   <BtnContainer>
                     <Counter>
-                        <button onClick={ () => removeqtdItn(item.id) }><Minus weight='bold'/></button>
+                        <a onClick={ () => {removeqtdItn(item.id)} }><Minus weight='bold'/></a>
                             <p>{item.qtd}</p>
-                        <button onClick={ () => addqtdItn(item.id) }><Plus weight='bold'/></button>
+                        <a onClick={ () => {addqtdItn(item.id)} }><Plus weight='bold'/></a>
                     </Counter>
   
                         <RemoveBtn onClick={ () => {removeItn(item.id)}}>

@@ -2,16 +2,19 @@
    { 
       "id": 10,
       "description": "Cartão de Crédito",
-      "active": false
+      "active": false,
+      "type": "CREDIT"
    },
    { 
       "id": 20,
       "description": "Cartão de Débito",
-      "active":false
+      "active":false,
+      "type":"bank"
 
    },{ 
       "id": 30,
       "description": "Dinheiro",
-      "active":false
+      "active":false,
+      "type":"money"
    }
 ]

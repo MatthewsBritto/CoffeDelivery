@@ -5,7 +5,7 @@ export const CarContainer = styled.div`
 
    width: 25rem;
    height: 35rem;
-   margin:  1rem 2rem ;
+   
 
    h2{
       margin:1rem 0 2rem 0;
@@ -54,7 +54,7 @@ export const Counter = styled.div`
    p  {
       font-size:1.2rem;
    }
-   button{
+   a{
       
       font-size:1rem;
       background-color:transparent;
