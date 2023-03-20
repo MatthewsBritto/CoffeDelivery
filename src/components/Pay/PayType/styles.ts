@@ -40,7 +40,7 @@ export const TypesContainer = styled.ul`
 
 `
 
-export const ItemPay = styled.a<TesteProps>`
+export const ItemPay = styled.button<TesteProps>`
       height: 3rem;
       width:30%;
       font-family: 'Roboto', sans-serif;

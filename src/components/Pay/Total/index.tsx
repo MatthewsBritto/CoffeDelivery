@@ -6,6 +6,7 @@ import { newOrderProps } from '../Form';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { formValidationSchema } from '../Form'; 
 import {zodResolver} from '@hookform/resolvers/zod'
+import { Link } from 'react-router-dom';
 // import { submitProps } from '../ShoppingCar';
 
 // type TotalProps = submitProps 
@@ -13,11 +14,14 @@ import {zodResolver} from '@hookform/resolvers/zod'
 
 export function Total() {
 
-   const {total} = useContext(OrderContext)
+   const {total,finishedOrder} = useContext(OrderContext)
 
    const [allTotal,setAllTotal] = useState(0)
 
    const [entrega,setEntrega] = useState(3.50)
+
+   // let finished = finishedOrder ? false : true
+
 
 
    const onSubmit: SubmitHandler<newOrderProps> = (data) => console.log(data);
@@ -59,8 +63,11 @@ export function Total() {
             <p>R$ <>{allTotal}</> </p> 
          </TotalPrice>
 
-         
-            <FinishedBtn type='submit'>Confirmar Pedido</FinishedBtn>
+            <Link to={'aproved'} type='submit'>
+               <FinishedBtn type='submit'>Confirmar Pedido
+            
+               </FinishedBtn>
+            </Link>
       </Container>
   )
 }

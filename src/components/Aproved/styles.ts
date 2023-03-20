@@ -55,6 +55,7 @@ export const Item = styled.li`
    gap: 1rem;
    line-height:1.3rem;
    margin:.6rem 1rem;
+   text-transform:capitalize;
    p{
       font-size: 1rem;
       color: ${p => p.theme.baseText};

@@ -1,22 +1,43 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Plus, Minus, ShoppingCart, } from 'phosphor-react';
-import { Order } from '../../../contexts/OrderContext'
+import { ListCoffeProps, Order } from '../../../contexts/OrderContext'
 import { Container,TextContainer,ImgContainer
    ,PriceContainer,CoffeCard,Counter,BuyBtn,
    LabelContainer, InputContainer } from './styles';
 
 import {OrderContext} from '../../../contexts/OrderContext'
+import { useForm} from 'react-hook-form'
 
-
-
+interface  pesq {
+   search:string
+}
 
 export function List(){
    
    const {addqtd,removeqtd,listCoffe,handleNewOrder,orders} = useContext(OrderContext)
 
+   const {watch,register} = useForm<pesq>()
+
+   let teste = watch('search')
+
+   const [x,setX] = useState<ListCoffeProps[]>(() => {
+      return [...listCoffe]
+   })
+
+   
+
+   function filter ( teste:string) {
+      const results = listCoffe.filter(
+         item => item.type.toLowerCase().indexOf(teste) !== -1 ||
+         item.description.toLowerCase().indexOf(teste) !== -1);
+      setX(results)      
+   }
+
    useEffect(() =>{
-      console.log(orders)
-   },[orders])
+
+      filter(teste)
+      
+   },[teste])
 
    
 
@@ -25,10 +46,10 @@ export function List(){
    <Container>
       <InputContainer>
          <h2>Nossos Cafés</h2>      
-         <input type="text"/>
+         <input id='search' {...register('search')} type="text"/>
       </InputContainer>   
 
-      {listCoffe && listCoffe.map((item) => {
+      {x && x.map((item) => {
          return(
 
             <CoffeCard key={item.id}>

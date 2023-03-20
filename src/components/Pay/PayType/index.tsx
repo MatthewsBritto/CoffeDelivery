@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CurrencyDollar,CreditCard,Money,Bank } from 'phosphor-react';
 import { Container,TextContainer,TypesContainer,ItemPay } from './styles';
 import Pays from '../../../json/payForms.json'
 import { Icon } from './components';
+import { OrderContext } from '../../../contexts/OrderContext';
+
 
 interface PaysProps {
-   id:number,
+   id:number;
    description:string;
    active:boolean;
    type:string;
@@ -13,8 +15,9 @@ interface PaysProps {
 
 export function PayType() {
 
-   const[active,setActive] = useState(0)
+   const[active,setActive] = useState('')
 
+   const {clickPayType} = useContext(OrderContext)
    
    const [paysForm,setPaysForm] = useState<PaysProps[]>(()=>{
       return [...Pays]
@@ -25,6 +28,7 @@ export function PayType() {
       let newlist:PaysProps[] = []
       let itemIndex = paysForm.findIndex(item => item.id === id)
       
+      
       if(itemIndex === -1) return
 
       newlist = paysForm.map((item) =>{
@@ -33,30 +37,30 @@ export function PayType() {
             active:item.id ===id
          }
 
-   /*          if(itemIndex === item.id){
-               return{
-                  ...item,
-                  active:true
+            // if(itemIndex === item.id){
+            //    return{
+            //       ...item,
+            //       active:true,  
       
-               }
-            } else {
-               return{
-                  ...item,
-                  active:false
+            //    }
+            // } else {
+            //    return{
+            //       ...item,
+            //       active:false
       
-               }
+            //    }
 
-            } */
-
-
+            // }
       })
-
-
       setPaysForm(newlist)
-
+      setActive(paysForm[itemIndex].description)
+      clickPayType(paysForm[itemIndex].description)
    }
    
-   
+   // useEffect(() =>{
+   //    clickPayType(active)
+
+   // },[active])
   return (
    <Container>
       <TextContainer>
@@ -72,9 +76,15 @@ export function PayType() {
          {paysForm && paysForm.map((item) => {
             
                return (
-                  <ItemPay  key={item.id} onClick={ () => {setActiveFalse(item.id)} } isSelected={item.active}>
-                     <Icon typeBatata={item.type} />
+                  <ItemPay  
+                     key={item.id}
+                     onClick={ () => {setActiveFalse(item.id)}} 
+                     isSelected={item.active}
+                     
+                     >
+                     <Icon typeBatata={item.type}/>
                      <h3>{item.description}</h3>
+                     
                   </ItemPay>
                 )
          })}

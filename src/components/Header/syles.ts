@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface ShopProps{
+   num: string
+}
+
 export const HeaderContainer = styled.header`
 display: flex;
 flex-direction: row;
@@ -17,7 +21,7 @@ background: #FAFAFA;
 
 `
 
-export const Actions = styled.nav`
+export const Actions = styled.nav<ShopProps>`
    display: flex;
    flex-direction: row;
    justify-content: flex-end;
@@ -71,7 +75,7 @@ export const Actions = styled.nav`
 
       /* Brand/Yellow Light */
 
-      background: ${props=> props.theme[ 'yellowlight']};
+      background: ${props=> props.theme['yellowlight']};
       color: ${props => props.theme['darkyellow']};
       border-radius: 6px;
       cursor: pointer;
@@ -81,6 +85,14 @@ export const Actions = styled.nav`
       flex: none;
       order: 1;
       flex-grow: 0;
+   }
+   a:after{
+      content: '${props => props.num !== '0' ? props.num : ''}';
+      font-size:1rem;
+      color: ${props => props.theme.white};
+      width: 1rem;
+      height: 1rem;
+      
    }
 
 `

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Img from '../../assets/Illustration.png'
 import { AprovedTitle, Container,TextContainer,InfosContainer,SpanT,Item,Icon } from './styles';
 import { CurrencyDollar,Timer,MapPin } from 'phosphor-react';
+import { OrderContext } from '../../contexts/OrderContext';
 
 export function PayAProved()  {
+
+   const {finishedOrder} = useContext(OrderContext)
+
+
   return (
       <Container>
          <TextContainer>
@@ -13,7 +18,8 @@ export function PayAProved()  {
             <InfosContainer>  
                <Item>
                   <Icon color='#8047f8'><MapPin size={20} weight='fill'/></Icon>
-                  <p>Entrega em <SpanT>Rua João Daniel Martinelli, 102</SpanT> <br/> Farrapos - Porto Alegre, RS</p>
+                  <p>Entrega em <SpanT>{finishedOrder?.adress}, {finishedOrder?.number}</SpanT> 
+                  <br/> {finishedOrder?.bairro} - {finishedOrder?.city}, {finishedOrder?.uf}</p>
                </Item>
                <Item>
                   <Icon color='#DBAC2C'><Timer size={20} weight='fill'/></Icon>
@@ -26,7 +32,7 @@ export function PayAProved()  {
                   <Icon color='#c47f17'><CurrencyDollar size={20} weight='fill'/></Icon>
                   <p>  
                      Pagamento na entrega<br/>
-                     <SpanT>Cartão de crédito</SpanT>
+                     <SpanT>{finishedOrder?.payType}</SpanT>
                   </p>
                </Item>
             </InfosContainer>
