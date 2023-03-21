@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 interface ShopProps{
    num: string
 }
@@ -72,7 +73,7 @@ export const Actions = styled.nav<ShopProps>`
       border:none;
       width:2.37rem ;
       height: 2.37rem;
-
+      position: relative;
       /* Brand/Yellow Light */
 
       background: ${props=> props.theme['yellowlight']};
@@ -92,7 +93,14 @@ export const Actions = styled.nav<ShopProps>`
       color: ${props => props.theme.white};
       width: 1rem;
       height: 1rem;
-      
+      position:absolute;
+      padding: .2rem;
+      left:28px;
+      bottom:28px;
+      background-color:${props => props.num !== '0' ? props.theme.darkyellow : 'transparent'};
+      text-align:center;
+      border-radius:50%;
+           
    }
 
 `

@@ -14,21 +14,15 @@ import { Link } from 'react-router-dom';
 
 export function Total() {
 
-   const {total,finishedOrder} = useContext(OrderContext)
+   const {total,orders,finishedOrder} = useContext(OrderContext)
 
    const [allTotal,setAllTotal] = useState(0)
 
    const [entrega,setEntrega] = useState(3.50)
 
-   // let finished = finishedOrder ? false : true
+   let finished: boolean = orders.length === 0 || finishedOrder === undefined
 
 
-
-   const onSubmit: SubmitHandler<newOrderProps> = (data) => console.log(data);
-
-   const { register, handleSubmit,formState:{errors}} = useForm<newOrderProps>({
-      resolver:zodResolver(formValidationSchema),
-   })
 
 
    useEffect(() => {
@@ -47,6 +41,7 @@ export function Total() {
 
    }
 
+   console.log(finished) 
    return (
       <Container>
          <Item>
@@ -64,7 +59,7 @@ export function Total() {
          </TotalPrice>
 
             <Link to={'aproved'} type='submit'>
-               <FinishedBtn type='submit'>Confirmar Pedido
+               <FinishedBtn disabled={finished} type='submit'>Confirmar Pedido
             
                </FinishedBtn>
             </Link>
