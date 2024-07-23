@@ -6,12 +6,16 @@ interface ShopProps{
 }
 
 export const HeaderContainer = styled.header`
+
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-padding: 2rem 10rem;
-height: 6.5rem;
+
+@media (min-width: 768px) {
+ padding: 2rem 10rem;
+ height: 6.5rem; 
+}
 
 
 background: #FAFAFA;
@@ -27,11 +31,15 @@ export const Actions = styled.nav<ShopProps>`
    flex-direction: row;
    justify-content: flex-end;
    align-items: center;
-   padding: 0px;
    gap: .75rem;
-   margin-right: 7rem;
-   width: 12rem;
-   height: 2.37rem;
+   padding:1rem;
+   
+   @media (min-width: 768px) {
+      padding: 0px;
+      margin-right: 7rem;
+      width: 12rem; 
+      height: 2.37rem;
+   }
 
 
    /* Inside auto layout */
@@ -39,8 +47,8 @@ export const Actions = styled.nav<ShopProps>`
    flex: none;
    order: 1;
    flex-grow: 0;  
-
-   div{
+ 
+   div {
       display: flex;
       flex-direction: row;
       justify-content: center;

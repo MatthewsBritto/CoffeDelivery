@@ -1,5 +1,5 @@
 
-import { HeaderContainer,Actions } from "./syles"
+import { HeaderContainer,Actions } from "./styles"
 import Logo from '../../assets/Logo.png'
 import {MapPin,ShoppingCart} from 'phosphor-react'
 import { useContext, useEffect } from "react"
@@ -12,7 +12,6 @@ export function Header(){
    
    const {updateAllPrices,orders } = useContext(OrderContext) 
 
-      // let numOrders : number = orders.length
       
    
    useEffect(() => {

@@ -10,7 +10,7 @@ export const HeroContainer = styled.div`
    align-items:center;
    padding: 3rem 10rem;
 
-   img{
+   img {
       width: 29.75rem;
       height:23rem;
       margin-right:6rem;
@@ -39,6 +39,10 @@ export const TextContainer = styled.div`
       font-size: 3.1rem;
       line-height: 130%;
       padding:0 0 1rem 0 ;
+
+      @media  (max-width:768px) {
+         font-size: 1.5rem;
+      }
    }
    h4{
       font-family: 'Roboto';

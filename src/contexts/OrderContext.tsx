@@ -8,7 +8,7 @@ export interface Order {
    id:number;
    type:string;
    qtd:number;
-   Photo:string;
+   photo:string;
    price:number;
  }
  
@@ -16,7 +16,7 @@ export interface Order {
    id:number;
    type: string;
    price: string;
-   Photo:string;
+   photo:string;
    sub:string[];
    description:string;
    qtd:number;
@@ -68,15 +68,13 @@ export interface Order {
 
    const [payType,setPayType] = useState<string>('')
 
-   const [listCoffe, setListCoffe] = useState<ListCoffeProps[]>(()=> {
+   const [listCoffe, setListCoffe] = useState<ListCoffeProps[]>(() => {
     return [...ListCoffe.types]
  });
 
   useEffect(() => {
 
       sumTotal(orders)
-      console.log(finishedOrder)
-      console.log(payType) 
 
   },[orders,finishedOrder])
 
@@ -151,7 +149,7 @@ export interface Order {
      type:data.type,
      qtd: data.qtd,
      price:parseFloat(data.price.replace(',', '.')),
-     Photo:data.Photo,
+     photo:data.photo,
      
   }
 

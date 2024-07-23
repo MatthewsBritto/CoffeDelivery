@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Plus, Minus, ShoppingCart, } from 'phosphor-react';
 import { ListCoffeProps, Order } from '../../../contexts/OrderContext'
-import { Container,TextContainer,ImgContainer
-   ,PriceContainer,CoffeCard,Counter,BuyBtn,
-   LabelContainer, InputContainer } from './styles';
+import { Container, InputContainer } from './styles';
+import  Card  from '../Card'
 
 import {OrderContext} from '../../../contexts/OrderContext'
 import { useForm} from 'react-hook-form'
@@ -14,7 +12,7 @@ interface  pesq {
 
 export function List(){
    
-   const {addqtd,removeqtd,listCoffe,handleNewOrder,orders} = useContext(OrderContext)
+   const { listCoffe } = useContext(OrderContext)
 
    const {watch,register} = useForm<pesq>()
 
@@ -51,41 +49,16 @@ export function List(){
 
       {x && x.map((item) => {
          return(
-
-            <CoffeCard key={item.id}>
-
-               <ImgContainer>
-                     <img src={item.Photo} />
-
-                     <LabelContainer>
-
-                        {item.sub && item.sub.map((itemlabel)=>{
-
-                           return(<label>{itemlabel}</label>  )
-                        })}
-                     </LabelContainer>
-                  
-               </ImgContainer>
-
-               <TextContainer>
-                  <h3>{item.type}</h3>
-                  <p>{item.description}</p>
-               </TextContainer>
-
-               <PriceContainer>
-                  <h3>R$<span>{item.price}</span></h3>
-                  <Counter>
-                     <button onClick={ () => removeqtd(item.id)}><Minus weight='bold'/></button>
-                        <p>{item.qtd}</p>
-                     <button onClick={ () => addqtd(item.id)}><Plus weight='bold'/></button>
-
-                     <BuyBtn onClick={()=> {handleNewOrder(item)}}>
-                        <ShoppingCart weight='fill'/>
-                     </BuyBtn>
-                  </Counter>
-               </PriceContainer>
-
-            </CoffeCard>
+            <Card 
+               id={item.id}
+               photo={item.photo}
+               price={item.price}
+               qtd={item.qtd}
+               sub={item.sub}
+               type={item.type}
+               description={item.description}
+            />
+            
          )
       })}
 

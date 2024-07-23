@@ -3,6 +3,7 @@ export const defaultTheme = {
    // propriedades
 
    // products
+   
    darkyellow: '#c47f17',
    yellow:'#DBAC2C',
    yellowlight:'#f1E9C9',
