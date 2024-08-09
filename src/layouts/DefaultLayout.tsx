@@ -1,12 +1,16 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header/header";
+import { LayoutContainer } from "./styles";
+import Footer from "../components/Footer";
 
-export function DefaultLayout(){
+export function DefaultLayout() {
+
    return (
-      <div style={{width:1400, margin:'auto'}}>
+      <LayoutContainer>
          <Header />
          <Outlet />
-      </div>
+         <Footer />
+      </LayoutContainer>
       
    )
 }

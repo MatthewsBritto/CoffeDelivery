@@ -163,6 +163,17 @@
          ],
          "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
          "qtd": 1
+      },
+      {
+         "id": 14,
+         "type": "Tenis",
+         "price": "9,90",
+         "photo": "../../../../src/assets/Tenis.png",
+         "sub": [
+            "Especial"
+         ],
+         "description": "Bebida adocicada preparada com café e leite de coco",
+         "qtd": 1
       }
    ]
 }

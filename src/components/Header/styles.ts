@@ -13,10 +13,14 @@ justify-content: space-between;
 align-items: center;
 
 @media (min-width: 768px) {
- padding: 2rem 10rem;
+ padding: 2rem;
  height: 6.5rem; 
 }
 
+@media (max-width: 412px) {
+   width: 100%;
+   padding: .5rem 1rem;
+}
 
 background: #FAFAFA;
    
@@ -36,7 +40,7 @@ export const Actions = styled.nav<ShopProps>`
    
    @media (min-width: 768px) {
       padding: 0px;
-      margin-right: 7rem;
+      /* margin-right: 7rem; */
       width: 12rem; 
       height: 2.37rem;
    }

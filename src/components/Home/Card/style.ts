@@ -1,12 +1,11 @@
 import styled from "styled-components"
 
 export const CoffeCard = styled.div`
-   	width:20%;
+   	width:100%;
       background-color: ${props => props.theme.baseCard};
-      margin-right:1rem;
       display:flex;
       flex-direction:column;
-      justify-content:space-between
+      justify-content:space-between;
            
 `
 
@@ -15,14 +14,13 @@ export const ImgContainer = styled.div`
    display: flex;
    flex-direction: column;
    align-items:center;
-   img{
-      width: 7.5rem;
-      height: 7.5rem;
-      /* padding: 1rem; */
+   img {
+      width: 5rem;
+      height: 5rem;
       position:relative;
       top: -20px;
    }
-   label{
+   label {
       background-color: ${props => props.theme.yellowlight};
       color: ${props => props.theme.darkyellow};
       padding: .25rem .75rem;
@@ -38,14 +36,12 @@ export const ImgContainer = styled.div`
 export const TextContainer = styled.div`
 
    width: 100%;
-   text-align:center;
+   text-align: center;
 
-   h3{
-      padding: .5rem 0 ;
-      margin: .5rem 0;
+   h3 {
+      padding: .5rem;      
       font-family:'Baloo 2';
       color: ${props => props.theme.baseTitle};
-      font-size:1.5rem;
 
    }
 
@@ -68,20 +64,26 @@ export const PriceContainer = styled.div`
    font-family:'Roboto';
    color: ${props => props.theme.baseTitle};
    display: flex;
-   span{
+   justify-content:center;
+   align-items:center;
+   gap: 1rem;
+
+   span  {
       font-family:'Baloo 2';
       font-size: 1.5rem;
       padding: 0 .2rem;
+   }
+
+   @media (min-width: 768px) {      
+      flex-direction:row;
    }
 `
 
 export const Counter = styled.div`
    display: flex;
-   width:100%;
+   width:40%;
    background-color:${props => props.theme.purpleLight};
-   font-size:1rem;
    align-items: center;
-   font-size:1rem;
    justify-content:space-between;
    gap: 8px;
    margin-left: .5rem;

@@ -79,7 +79,7 @@ export interface Order {
   },[orders,finishedOrder])
 
   
- function addqtd(id:number){
+ function addqtd(id:number) {
     let item = listCoffe[id]
    
     if(item && item.qtd >= 0) {
@@ -91,12 +91,13 @@ export interface Order {
 
     
  }
- function addqtdItn(id:number){
+
+ function addqtdItn(id:number) {
 
   let indice = orders.findIndex( i => i.id === id)
   let updateitn = orders[indice]
 
-  if(updateitn && updateitn.qtd >= 0){
+  if(updateitn && updateitn.qtd >= 0) {
 
     updateitn.qtd += 1;
 
@@ -104,7 +105,7 @@ export interface Order {
     newOrder[indice] = updateitn
     setOrders([...newOrder])
     updatePrice(id)
-  }
+  } 
  }
 
  function removeqtd(id:number){

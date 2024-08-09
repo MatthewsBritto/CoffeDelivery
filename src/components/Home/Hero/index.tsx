@@ -13,7 +13,7 @@ export function Hero() {
             para qualquer hora do dia
          </h1>
          <h4>
-            Com o Coffe Delivery você recebe seu café onde estiver, a qualquer hora!
+            Com o Coffe Delivery você recebe seu café onde estiver, a qualquer hora !
          </h4>
          <ItemsContainer>
             <li>

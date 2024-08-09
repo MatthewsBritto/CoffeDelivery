@@ -26,7 +26,7 @@ export function ShoppingCar() {
           {orders && orders.map((item) => {
             return (
               <Item key={item.id}>
-                <img src={item.Photo}/>
+                <img src={item.photo}/>
   
                 <TextContainer>
   

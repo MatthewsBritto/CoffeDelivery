@@ -1,68 +1,92 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
+const float = keyframes`
+  	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+ `
 
 export const HeroContainer = styled.div`
 
-   width: 100%;
-   height: 34rem;
-   display: flex;
-   justify-content:space-between;
+   display:flex;
+   flex-direction: column-reverse;
    align-items:center;
-   padding: 3rem 10rem;
 
    img {
-      width: 29.75rem;
-      height:23rem;
-      margin-right:6rem;
-      margin-top:1rem;
+      max-width:80%;
+      padding: 1rem;
+      animation-name: ${float};
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+   }
+
+   @media  (min-width:768px){
+      flex-direction: row;
+
+      img {
+         max-width:50%;
+      }
    }
 
 `
 
 export const TextContainer = styled.div`
-
+   
+   padding: .5rem 1rem;
+   gap: 1.5rem;
    display: flex;
    flex-direction: column;
-   align-items: flex-start;
-   padding: 0px;
-   gap: 1rem;
-   justify-content:center;
-   width: 36.75rem;
-   height: 16rem;
- 
 
-   h1{
+   @media  (min-width:768px){
+      gap: 1rem;
+      padding:2rem;
+
+
+   }
+
+   h1 {
       /* Title/Title XL */
       font-family: 'Baloo 2';
       font-style: normal;
       font-weight: 800;
-      font-size: 3.1rem;
-      line-height: 130%;
-      padding:0 0 1rem 0 ;
+      font-size: 2.2rem;
+      width:100%;
+      line-height: 130%;   
 
-      @media  (max-width:768px) {
-         font-size: 1.5rem;
+      @media (min-width: 768px) {
+         font-size:2rem;
       }
    }
    h4{
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 400;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       line-height: 130%;
       padding:0 0 1rem 0;
+      width:100%;
+
+      @media (min-width: 768px) {
+         font-size:1.2rem;
+      }
    }
 `
 
 export const ItemsContainer = styled.ul `
    display: flex;
-   flex-wrap:wrap;
-   width: 35.43rem;
-   height: 5.25rem;
-   gap: 2rem;
-   li{
+   flex-wrap:wrap;   
+   gap: 1rem; 
+   width: 100%;
+   
+   li {
       list-style:none;
-      width: 40%;
+      width: 100%;
       display: flex;
       gap: 1rem; 
       align-items:center;

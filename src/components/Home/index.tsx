@@ -6,7 +6,6 @@ export function Home(){
    <>
       <Hero/>
       <List/>
-   
    </>
   );
 }
