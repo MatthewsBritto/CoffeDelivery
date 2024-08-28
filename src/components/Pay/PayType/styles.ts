@@ -41,6 +41,13 @@ export const TypesContainer = styled.ul`
 `
 
 export const ItemPay = styled.button<TesteProps>`
+
+   @media (max-width:412px) {
+      h3 {
+         font-size:.8rem;
+      }
+      
+   }
       height: 3rem;
       width:30%;
       font-family: 'Roboto', sans-serif;

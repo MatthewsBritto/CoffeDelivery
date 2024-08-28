@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 export const CarContainer = styled.div`
 
-   width: 25rem;
-   height: 35rem;
-   
+   width: 100%; 
 
    h2{
       margin:1rem 0 2rem 0;

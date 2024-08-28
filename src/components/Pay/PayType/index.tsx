@@ -37,20 +37,6 @@ export function PayType() {
             active:item.id ===id
          }
 
-            // if(itemIndex === item.id){
-            //    return{
-            //       ...item,
-            //       active:true,  
-      
-            //    }
-            // } else {
-            //    return{
-            //       ...item,
-            //       active:false
-      
-            //    }
-
-            // }
       })
       setPaysForm(newlist)
       setActive(paysForm[itemIndex].description)

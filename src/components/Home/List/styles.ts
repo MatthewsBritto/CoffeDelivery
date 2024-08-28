@@ -18,6 +18,12 @@ export const Container = styled.div`
       padding: 2rem;
    }
 
+   @media (min-width: 1280px) {
+      padding:2rem 4rem;
+      max-width:1280px;
+      margin: 0 auto;
+   }
+
 `
 
 export const InputContainer = styled.div`
@@ -26,19 +32,24 @@ export const InputContainer = styled.div`
    flex-direction:column;
    gap:1rem;   
 
-   h2{
+   h2 {
       font-family:'Baloo 2';
       color: ${props => props.theme.baseTitle};
       font-size:2rem;
       
    }
-   input{
+   input {
       border: none;
       height: 2rem;
       width: 90%;
       background-color:${props => props.theme.baseCard};
       margin-bottom:.7rem;
       padding: 0.5rem;
+
+      @media (max-width:1280px){
+         width:50%;
+      }
+
    }
 `
 
@@ -52,6 +63,12 @@ export const ListContainer = styled.div`
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:1rem;
+   }
+
+   @media (min-width: 1280px) {
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap:2rem;
    }
 
 `

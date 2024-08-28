@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { MapPinLine } from 'phosphor-react';
-import { Container,TextContainer,FormPay, FormInput,ContainerContent,Lego,InputsContainer } from './styles';
+import { Container,TextContainer,FormPay, FormInput,ContainerContent,Lego,InputsContainer, CepInputContainer, DoubleInputContainer, TripleInputContainer } from './styles';
 import { PayType } from '../PayType';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod'
@@ -30,7 +30,8 @@ export function Form() {
    })
 
    const onSubmitAdressForm: SubmitHandler<newOrderProps> = (data) => {
-      clickFinishedOrder(data,payType)
+      // clickFinishedOrder(data,payType)
+      console.log(data)
    }
 
    
@@ -38,7 +39,6 @@ export function Form() {
    return (
 
    <Container>
-
 
       <ContainerContent>
          <h2>Complete seu pedido</h2>
@@ -54,35 +54,58 @@ export function Form() {
                         <p>Informe o endereço onde deseja receber seu pedido</p>
                      </div>
                   </TextContainer>
-                  <div>
 
-                     <FormInput id='cep' placeholder='Cep' width={12.5} {...register('cep',{valueAsNumber:false})}/>
+                  <CepInputContainer>
+                     <FormInput id='cep' placeholder='Cep'  {...register('cep',{valueAsNumber:false})}/>
                      {errors.cep && ( <label>{errors.cep?.message}</label>)}
-                  </div>
+                  </CepInputContainer>
 
                   <div>
-                     <FormInput id='adress' placeholder='Rua' width={35} {...register('adress')} />
+                     <FormInput id='adress' placeholder='Rua'  {...register('adress')} />
                      {errors.adress && ( <label>{errors.adress?.message}</label >)}
-                  </div>              
-                  <div>
-                     <FormInput id='number' placeholder='Número' width={12.5} {...register('number',{valueAsNumber:false})}/>
-                     {errors.number && ( <label>{errors.number?.message}</label >)}
-                  </div>                     
-                  <FormInput id='complement' placeholder='Complemento' width={21.75} {...register('complement')}/>                  
-                  <div>
-                     <FormInput id='bairro' placeholder='Bairro' width={12.5} {...register('bairro')}/>
-                     {errors.bairro && ( <label>{errors.bairro?.message}</label>)}
-                  </div>
-                  
-                  <div>
-                     <FormInput id='city' placeholder='Cidade' width={17.25} {...register('city')}/>
-                     {errors.city && ( <label>{errors.city?.message}</label>)}
-                  </div>
-                  
-                  <div>
-                     <FormInput id='uf' placeholder='UF' width={3.75} {...register('uf')}/>
-                     {errors.uf && ( <label>{errors.uf?.message}</label>)}
-                  </div>
+                  </div>   
+
+                  <DoubleInputContainer>
+                     <FormInput id='number' placeholder='Número'  {...register('number',{valueAsNumber:false})}/>
+                     {errors.number && ( 
+                        <label>{errors.number?.message}</label >)}
+
+                     <FormInput 
+                        id='complement' 
+                        placeholder='Complemento'
+                        {...register('complement')}
+                        />    
+                  </DoubleInputContainer>         
+
+
+                  <TripleInputContainer>
+                     <FormInput 
+                        id='bairro' 
+                        placeholder='Bairro'
+                        {...register('bairro')}
+                        />
+                        {  errors.bairro && ( 
+                           <label> {errors.bairro?.message} </label>
+                        )}
+                        
+                        <FormInput 
+                           id='city' 
+                           placeholder='Cidade'
+                           {...register('city')}/>
+                           { 
+                              errors.city && ( 
+                                 <label>{errors.city?.message}</label>
+                           )}
+                        
+                        <FormInput 
+                           id='uf' 
+                           placeholder='UF' 
+                           {...register('uf')}/>
+                           { errors.uf && ( 
+                              <label>{errors.uf?.message}</label>
+                           )}
+
+                  </TripleInputContainer>
                   
                </InputsContainer>
                <PayType/>

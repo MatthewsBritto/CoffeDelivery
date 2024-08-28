@@ -22,9 +22,6 @@ export function Total() {
 
    let finished: boolean = orders.length === 0 || finishedOrder === undefined
 
-
-
-
    useEffect(() => {
 
       updateTotal()
@@ -59,8 +56,8 @@ export function Total() {
          </TotalPrice>
 
             <Link to={'aproved'} type='submit'>
-               <FinishedBtn disabled={finished} type='submit'>Confirmar Pedido
-            
+               <FinishedBtn disabled={finished} type='submit'>
+                  Confirmar Pedido
                </FinishedBtn>
             </Link>
       </Container>

@@ -17,10 +17,10 @@ export const HeroContainer = styled.div`
    display:flex;
    flex-direction: column-reverse;
    align-items:center;
+   padding: 2rem;
 
    img {
       max-width:80%;
-      padding: 1rem;
       animation-name: ${float};
       animation-duration: 8s;
       animation-iteration-count: infinite;
@@ -34,20 +34,28 @@ export const HeroContainer = styled.div`
       }
    }
 
+   @media (min-width: 1280px){
+      padding:2rem 4rem;
+      justify-content:space-between;
+      max-width:1280px;
+      margin:0 auto;
+   }
+
 `
 
 export const TextContainer = styled.div`
    
-   padding: .5rem 1rem;
+   
    gap: 1.5rem;
    display: flex;
    flex-direction: column;
 
    @media  (min-width:768px){
       gap: 1rem;
-      padding:2rem;
+   }
 
-
+   @media (min-width: 1280px){
+      max-width:40%;
    }
 
    h1 {
@@ -63,7 +71,7 @@ export const TextContainer = styled.div`
          font-size:2rem;
       }
    }
-   h4{
+   h4 {
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 400;

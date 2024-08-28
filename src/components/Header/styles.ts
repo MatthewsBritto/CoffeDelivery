@@ -17,6 +17,12 @@ align-items: center;
  height: 6.5rem; 
 }
 
+@media (min-width: 1280px){
+   padding:2rem 4rem;
+   max-width:1280px;
+   margin:0 auto;
+}
+
 @media (max-width: 412px) {
    width: 100%;
    padding: .5rem 1rem;

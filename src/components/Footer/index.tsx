@@ -1,6 +1,9 @@
 import React from 'react'
 import { FooterContainer, SocialContainer } from './styles'
 import Logo from '../../assets/Logo.png'
+import { InstagramLogo, FacebookLogo, TiktokLogo } from 'phosphor-react'
+
+
 
 export default function Footer() {
   return (
@@ -8,10 +11,12 @@ export default function Footer() {
       <img src={Logo}/>
       
       <SocialContainer>
-        <h3>Nossas Redes</h3>
-
-
+        <InstagramLogo />
+        <FacebookLogo />
+        <TiktokLogo />
       </SocialContainer>
+
+      <label>Desenvolvido por @MatthewsBritto</label>
 
     </FooterContainer>
   )
