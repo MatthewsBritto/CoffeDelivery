@@ -51,6 +51,7 @@ export function List(){
          {x && x.map((item) => {
             return (
                <Card 
+                  key={item.id}
                   id={item.id}
                   photo={item.photo}
                   price={item.price}

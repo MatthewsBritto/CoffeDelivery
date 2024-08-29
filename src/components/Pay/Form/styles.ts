@@ -4,7 +4,7 @@ export const Container =  styled.div`
 
    width: 100%;
    padding: 1rem;
-   max-width: 640px;
+   
 
    @media (min-width:768px) {
       padding: 1rem 2rem;
@@ -45,16 +45,19 @@ export const FormPay = styled.form`
    gap: 2rem;
    justify-content:space-between;
 
+   @media (min-width: 1280px) {
+      flex-direction: row;
+   }
 
 `
 export const FormInput = styled.input`
-   height:2.62rem;  
+   min-height:2.62rem;  
    max-width:100%;
    /* width: ${props=> props.width}rem; */
    border-radius:8px;
    border:none;
    padding: 0 1rem;
-    background-color:${props=> props.theme.baseInput};
+   background-color:${props=> props.theme.baseInput};
 `
 
 
@@ -75,6 +78,13 @@ export const Lego = styled.div`
    flex-wrap: wrap;
    flex-direction:column;
    justify-content:space-around;
+   gap:1rem;
+   max-width:640px;
+   max-height: 1050px;
+
+   @media (min-width: 1280px) {
+      flex-direction: row;
+   }
    
 
 `
@@ -88,6 +98,9 @@ export const InputsContainer = styled.div`
    padding: 1rem 0;
    background-color: ${props=> props.theme.baseCard};
    border-radius: 12px;
+   max-height: 800px;
+
+
 
    div{
       
@@ -105,6 +118,8 @@ export const InputsContainer = styled.div`
 
    @media (min-width: 768px) {
       padding: 1rem;
+
+    
    }
 `
 

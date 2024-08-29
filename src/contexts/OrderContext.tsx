@@ -202,10 +202,9 @@ export interface Order {
     setPayType(active)
  }
 
- function clickFinishedOrder(data:OrderAdress,payType:string){
+ function clickFinishedOrder(data:OrderAdress,payType:string) {
 
-   
-  if(payType !== '' ){
+  if(payType !== '' ) {
     let newOrder = {
         adress:data.adress,
         bairro:data.bairro,

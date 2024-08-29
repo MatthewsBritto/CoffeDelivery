@@ -16,8 +16,13 @@ export const CarItemsContainer = styled.div`
 
    width: 100%;
    background-color: ${pro => pro.theme.baseCard};
-   padding: 1rem ;
+
    border-radius: 0 30px 0 30px;
+   
+   @media (min-width: 768px) {
+      padding: 1rem 2rem;
+      max-width: 640px;
+   }
 `
 
 export const BuyBtn = styled.a`
@@ -61,8 +66,11 @@ export const Counter = styled.div`
       border:none;
       line-height:50%;
       border-radius:8px;
-      
+   }
 
+   
+   @media (min-width: 768px) {
+      padding:.5rem 1rem ;
    }
 `
 export const Item = styled.div`
@@ -70,7 +78,8 @@ export const Item = styled.div`
    display: flex;
    justify-content:space-between;
    align-items:center;
-   margin:1.5rem 0;
+   padding:1.5rem 0;
+   border-bottom: 1px solid lightgray;
 
    img{
       width:4rem;
@@ -79,7 +88,16 @@ export const Item = styled.div`
 
 export const TextContainer = styled.div`
    width: 60%;
-   text-align:center;
+   padding: 0.2rem 1rem;
+   display: flex;
+   flex-direction:column;
+   gap:.5rem;
+   
+   
+   @media (min-width: 768px) {
+      width: 75%;
+      
+   }
    
    h3{
       font-family: 'Roboto',sans-serif;
@@ -93,7 +111,12 @@ export const ItemTotal = styled.h3`
 
    color: ${props => props.theme.baseText};
    font-family:'baloo 2', sans serif;
-   margin-bottom:2rem;
+   font-size:1rem;
+   
+   
+   @media (min-width: 768px) {
+      margin-bottom:2rem;
+   }
 
 `
 
@@ -114,12 +137,22 @@ export const RemoveBtn = styled.button`
       font-size:.8rem;
    }
 
+   
+   @media (min-width: 768px) {
+    padding:.5rem 1rem;
+   }
+
 `
 export const BtnContainer = styled.div`
    
-   width: 90%;
+   width: 100%;
    display: flex;
-   justify-content:space-evenly;
-   margin: 0 auto;
+   gap: 1rem;
+   
+   
+   @media (min-width: 768px) {
+      gap: 2rem;
+   }
+   
 
 `

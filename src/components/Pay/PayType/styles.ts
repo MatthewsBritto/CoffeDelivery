@@ -10,14 +10,18 @@ export const Container = styled.div`
    padding: 0.8rem;
    background-color: ${props => props.theme.baseCard};
    border-radius:12px;
+   max-height: 200px;
 `
 
 export const TextContainer = styled.div`
    display:flex;
    padding: 0.5rem 0;
+
    div {
+      width: 100%;
       font-family: 'Roboto', sans-serif;
       margin-left: .5rem;
+      text-align:left;
       h3{
          font-size:1.2rem;
          padding-bottom:.5rem;

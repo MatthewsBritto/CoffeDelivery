@@ -8,9 +8,9 @@ interface props {
 const Icon:React.FC<props> = ({typeBatata}) =>{
 
   switch (typeBatata.toUpperCase()) {
-   case 'BANK': return <Bank  weight='regular' size={18} color={'#8047f8'}/> 
-   case 'CREDIT': return <CreditCard weight='regular' size={18} color={'#8047f8'}/> 
-   case 'MONEY': return <Money weight='regular' size={18}   color={'#8047f8'}/>    
+   case 'BANK': return <Bank  weight='regular' size={20} color={'#8047f8'}/> 
+   case 'CREDIT': return <CreditCard weight='regular' size={20} color={'#8047f8'}/> 
+   case 'MONEY': return <Money weight='regular' size={20}   color={'#8047f8'}/>    
   
    default:
       return null
